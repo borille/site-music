@@ -1,0 +1,7 @@
+<?php
+
+$this->title = 'Instrumentos';
+echo $this->AddLinkHelper();
+echo $this->table( $this->data )->showEdit()
+        ->setTitles( array( 'Id', 'Nome', 'Ativo' ) );
+?>

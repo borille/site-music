@@ -1,0 +1,27 @@
+<?php if ( $this->pageCount ): ?>
+    <div id="pagination">
+        <?php if ( isset( $this->previous ) ): ?>
+            <a href="<?php echo $this->url( array( 'page' => $this->first ) ); ?>" title="Primeira">
+                <img width="14" src="<?php echo INCLUDE_PATH . '/img/first.png'; ?>"/>
+            </a>
+            <a href="<?php echo $this->url( array( 'page' => $this->previous ) ); ?>" title="Anterior">
+                <img width="16" src="<?php echo INCLUDE_PATH . '/img/previous.png'; ?>"/>
+            </a>
+        <?php endif; ?>
+        <?php foreach ( $this->pagesInRange as $page ): ?>
+            <?php if ( $page != $this->current ): ?>
+                <a href="<?php echo $this->url( array( 'page' => $page ) ); ?>"><?php echo $page; ?></a>
+            <?php else: ?>
+                <b>[<?php echo $page; ?>]</b>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        <?php if ( isset( $this->next ) ): ?>
+            <a href="<?php echo $this->url( array( 'page' => $this->next ) ); ?>" title="Próxima">
+                <img width="16" src="<?php echo INCLUDE_PATH . '/img/next.png'; ?>"/>
+            </a>
+            <a href="<?php echo $this->url( array( 'page' => $this->last ) ); ?>" title="Última">
+                <img width="14" src="<?php echo INCLUDE_PATH . '/img/last.png'; ?>"/>
+            </a>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>

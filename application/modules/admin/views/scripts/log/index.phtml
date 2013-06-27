@@ -1,0 +1,62 @@
+<?php
+$this->title = "Selecione o data do log";
+$data_hoje = Date( 'd/m/Y' );
+
+$user = Zend_Auth::getInstance()->getIdentity();
+?>
+
+<table class="listar">
+    <tr>
+        <th>Data do Log</th>
+        <th>Opções</th>
+    </tr>
+    <?php foreach ( $this->arquivos as $arquivo ): ?>
+        <tr>
+            <?php
+            $nome = explode( '.', $arquivo );
+            $data = explode( '_', $nome[0] );
+            $data_arquivo = $data[3] . '/' . $data[2] . '/' . $data[1];
+            ?>
+            <td>
+                <?php echo $data_arquivo; ?>
+            </td>
+            <td>
+                <?php echo $this->viewLinkHelper( $arquivo ); ?>
+                <?php
+                if ( $user->getRoleId() == 'D' )
+                {
+                    if ( $data_arquivo != $data_hoje )
+                    {
+                        echo $this->deleteLinkHelper( $arquivo );
+                    }
+                }
+                ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+<?php if ( $user->getRoleId() == 'D' ): ?>
+    <br/>
+    <form method="post" action="log/delete">
+        <table class="borda_tabela">
+            <tr>
+                <td align="right">Data Inicial:</td>
+                <td>
+                    <input type="text" name="data_inicio" id="data_inicio" value="<?php echo $this->data_inicio; ?>" size="8"/>
+                    <?php $this->CalendarHelper( 'data_inicio' ); ?>
+                </td>                
+            </tr>
+            <tr>
+                <td align="right">Data Final:</td>
+                <td>
+                    <input type="text" name="data_fim" id="data_fim" value="<?php echo $this->data_fim; ?>" size="8"/>
+                    <?php $this->CalendarHelper( 'data_fim' ); ?>
+                </td>                
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Excluir"/></td>
+            </tr>
+        </table>
+    </form>
+<?php endif; ?>

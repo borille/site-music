@@ -1,0 +1,182 @@
+/* Root = Horizontal, Secondary = Vertical */
+
+.navigation li a{
+    text-align: center;
+}
+
+.navigation li ul a{
+    text-align: left;
+}
+
+ul.navigation {
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    width: 600px; /*For KHTML*/
+    list-style: none;
+    height: 25px;
+    margin-top:0px;
+    margin:0 auto;    
+}
+
+ul.navigation li {
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    float: left; /*For Gecko*/
+    display: inline;
+    list-style: none;
+    position: relative;
+    height: 24px; /* diatância entre os box no 2º menu*/
+    width: 150px;
+    text-align: left;
+}
+
+ul.navigation ul {
+    margin: 0;
+    border: 0 none;
+    padding: 0;
+    width: 160px;
+    list-style: none;
+    display: none; /* sem none, mostra sempre os submenus */
+    position: absolute; /* não meche o box no rollover */
+    top: 25px; /* distância horizontal do segundo menu */
+    left: 0;
+}
+
+ul.navigation ul:after /*From IE 7 lack of compliance*/{
+    clear: both;
+    display: block;
+    font: 1px/0px serif;
+    content: ".";
+    height: 10px;
+    visibility: hidden;
+}
+
+ul.navigation ul li {
+    width: 230px; /* width do 2º box */
+    float: left; /*For IE 7 lack of compliance*/
+    display: block !important;
+    display: inline; /*For IE*/
+}
+
+/* Root Menu */
+ul.navigation a {
+    padding: 0 6px;
+    float: none !important; /*For Opera*/
+    float: left; /*For IE*/
+    display: block; /* tipo botão */
+    background: #DDD; /* fundo do botão */
+    color: #000; /* cor do texto */
+    font:  11px/23px Verdana, Arial, Helvetica, sans-serif; /* tam da fonte/altura do espaço da fonte (na prática, altura do box) */
+    font-weight: bold;
+    text-decoration: none;
+    height: auto !important;
+    height: 1%; /*For IE*/
+    border: 1px solid #C6C6C6;    
+    filter:opacity(alpha=90); /* para o IE */
+    -moz-opacity:0.9; /* para o FireFox */
+    opacity:0.9; /* para o outros Navegadores */    
+}
+
+/* Root Menu Hover Persistence */
+ul.navigation a:hover,
+ul.navigation li:hover a,
+ul.navigation li.iehover a {
+    background: #FFF; /* cor do 1º box no mouseover */
+    color: #666;
+    text-shadow: none;
+}
+
+/* 2nd Menu */
+ul.navigation li:hover li a,
+ul.navigation li.iehover li a {
+    float: none;
+    background: #F3F3F3;
+    color: #000;
+    border: 1px solid #C6C6C6;	
+}
+
+/* 2nd Menu Hover Persistence */
+ul.navigation li:hover li a:hover,
+ul.navigation li.iehover li a:hover,
+ul.navigation li:hover li:hover a,
+ul.navigation li.iehover li.iehover a {
+    background: #DDD;
+    border-left: #AAA solid 3px;
+    color: #222;
+}
+
+/* 3rd Menu */
+ul.navigation li:hover li:hover li a,
+ul.navigation li.iehover li.iehover li a {
+    background: #F3F3F3;
+    border-left: none;
+    color: #000;
+}
+
+/* 3rd Menu Hover Persistence */
+ul.navigation li:hover li:hover li a:hover,
+ul.navigation li.iehover li.iehover li a:hover,
+ul.navigation li:hover li:hover li:hover a,
+ul.navigation li.iehover li.iehover li.iehover a {
+    background: #DDD;
+    border-left: #AAA solid 3px;
+    color: #222;
+}
+
+/* 4th Menu */
+ul.navigation li:hover li:hover li:hover li a,
+ul.navigation li.iehover li.iehover li.iehover li a {
+    background: #EEE;
+    color: #666;
+}
+
+/* 4th Menu Hover */
+ul.navigation li:hover li:hover li:hover li a:hover,
+ul.navigation li.iehover li.iehover li.iehover li a:hover {
+    background: #CCC;
+    color: #FFF;
+}
+
+ul.navigation ul ul,
+ul.navigation ul ul ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 230px;
+}
+
+/* Do Not Move - Must Come Before display:block for Gecko */
+ul.navigation li:hover ul ul,
+ul.navigation li.iehover ul ul,
+ul.navigation li:hover ul ul ul,
+ul.navigation li.iehover ul ul ul {
+    display: none;
+}
+
+ul.navigation li:hover ul,
+ul.navigation li.iehover ul,
+ul.navigation ul li:hover ul,
+ul.navigation ul li.iehover ul,
+ul.navigation ul ul li:hover ul,
+ul.navigation ul ul li.iehover ul {
+    display: block;
+}
+
+.menurapido {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    color: #000000;
+    text-decoration: none;
+    background-color: #FFFFFF;
+    border-top-style: 2;
+    border-right-style: 2;
+    border-bottom-style: 2;
+    border-left-style: 2;
+    border-top-color: #666666;
+    border-right-color: #666666;
+    border-bottom-color: #666666;
+    border-left-color: #666666;
+    width: 145px;
+}

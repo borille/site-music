@@ -1,0 +1,7 @@
+<?php
+
+$this->title = 'Usuários';
+echo $this->AddLinkHelper();
+echo $this->table( $this->data )->showEdit()->showConfirmDelete()
+        ->setTitles( array( 'Id', 'Name', 'Password', 'Role', 'Mail' ) );
+?>

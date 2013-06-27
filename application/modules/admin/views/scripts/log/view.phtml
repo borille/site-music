@@ -1,0 +1,40 @@
+<form method="post">
+    Filtro:
+    <select name="filtro" id="filtro" onChange="submit(this)">
+        <option value="">Todos</option>
+        <option value="0">EMERG</option>
+        <option value="1">ALERT</option>
+        <option value="2">CRIT</option>
+        <option value="3">ERR</option>
+        <option value="4">WARN</option>
+        <option value="5">NOTICE</option>
+        <option value="6">INFO</option>
+        <option value="7">DEBUG</option>
+    </select>
+</form>
+
+<br/>
+<table width="90%">
+    <tr>
+        <th width="10%">Data</th>
+        <th width="10%">Hora</th>
+        <th width="10%">Tipo</th>
+        <th>Mensagem</th>
+    </tr>
+    <?php if ( $this->lines ): ?>
+        <?php foreach ( $this->lines as $line ): ?>    
+            <?php $explode_line = explode( ' ', $line ); ?>
+            <?php $line = explode( '): ', htmlspecialchars( $line ) ); ?>
+            <tr>        
+                <td valign="top"><?php echo isset( $explode_line[0] ) ? $explode_line[0] : ''; ?></td>
+                <td valign="top"><?php echo isset( $explode_line[1] ) ? $explode_line[1] : ''; ?></td>
+                <td valign="top"><?php echo isset( $explode_line[2] ) ? $explode_line[2] : ''; ?></td>
+                <td align="left" valign="top"><?php echo isset( $line[1] ) ? $line[1] : ''; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</table>
+
+<?php echo $this->Voltar( array( 'module' => $this->module, 'controller' => $this->controller ) ); ?>
+
+<?php $this->setValue( 'filtro', $this->filtro ); ?>
