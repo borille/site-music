@@ -3,6 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/C:/wamp/www/borille/site-music/public/.htaccess</file>
+        <file>file:/C:/wamp/www/borille/site-music/application/layouts/scripts/default/layout.phtml</file>
+        <file>file:/C:/wamp/www/borille/site-music/public/css/style.css</file>
+        <file>file:/C:/wamp/www/borille/site-music/application/configs/application.ini</file>
+        <file>file:/C:/wamp/www/borille/site-music/application/layouts/scripts/default/header.phtml</file>
+        <file>file:/C:/wamp/www/borille/site-music/application/layouts/scripts/default/footer.phtml</file>
+        <file>file:/C:/wamp/www/borille/site-music/application/modules/default/forms/Login.php</file>
+        <file>file:/C:/wamp/www/borille/site-music/application/modules/default/forms/SignUp.php</file>
     </open-files>
 </project-private>

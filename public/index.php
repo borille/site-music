@@ -18,7 +18,7 @@ defined( 'PUBLIC_PATH' )
 
 // Define include path
 defined( 'INCLUDE_PATH' )
-        || define( 'INCLUDE_PATH', 'http://' . $_SERVER['SERVER_NAME'] . '/SITE/public' );
+        || define( 'INCLUDE_PATH', 'http://' . $_SERVER['SERVER_NAME'] . '/borille/site-music/public' );
 
 // Ensure library/ is on include_path
 set_include_path( implode( PATH_SEPARATOR, array(

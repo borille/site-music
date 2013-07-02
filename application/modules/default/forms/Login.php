@@ -11,7 +11,7 @@ class Default_Form_Login extends My_Form
         $pass = $this->createPassword( 'password', $this->getView()->translate( "senha" ) );
         $pass->setRequired( true );
 
-        $this->addElements( array( $user, $pass, $this->createSubmit() ) );
+        $this->addElements( array( $user, $pass, $this->createSubmit()->setAttrib( 'class', 'btn' ) ) );
     }
 }
 

@@ -1,10 +1,19 @@
-<a href="<?php echo $this->url( array( 'controller' => 'index', 'action' => 'index' ) ) ?>">home</a>
+<div class="navbar-inner">
+    <div class="container">
+        <div class="nav-collapse collapse">
+            <ul class="nav">
+                <li class="active"><a href="<?php echo $this->url( array( 'controller' => 'index', 'action' => 'index' ) ) ?>">home</a></li>
 
-<?php if ( Zend_Auth::getInstance()->hasIdentity() ): ?>
-    <?php echo Zend_Auth::getInstance()->getIdentity()->getInstrument() ?>
-    <?php echo $this->translate( "bem-vindo" ) . ', ' . Zend_Auth::getInstance()->getIdentity()->getName() . ' - '; ?>
-    <a href="<?php echo $this->url( array( 'controller' => 'user', 'action' => 'logout' ) ) ?>"><?php echo $this->translate( "sair" ) ?></a>
-<?php else: ?>
-    <a href="<?php echo $this->url( array( 'controller' => 'user', 'action' => 'login' ) ) ?>">login</a>,
-    <a href="<?php echo $this->url( array( 'controller' => 'user', 'action' => 'sign-up' ) ) ?>"><?php echo $this->translate( "cadastre-se" ) ?></a>
-<?php endif; ?>
+                <?php if ( Zend_Auth::getInstance()->hasIdentity() ): ?>
+                    <?php echo Zend_Auth::getInstance()->getIdentity()->getInstrument() ?>
+                    <?php echo $this->translate( "bem-vindo" ) . ', ' . Zend_Auth::getInstance()->getIdentity()->getName() . ' - '; ?>
+                    <li><a href="<?php echo $this->url( array( 'controller' => 'user', 'action' => 'logout' ) ) ?>"><?php echo $this->translate( "sair" ) ?></a></li>
+                <?php else: ?>
+                    <li><a href="<?php echo $this->url( array( 'controller' => 'user', 'action' => 'login' ) ) ?>">login</a></li>
+                    <li><a href="<?php echo $this->url( array( 'controller' => 'user', 'action' => 'sign-up' ) ) ?>"><?php echo $this->translate( "cadastre-se" ) ?></a></li>
+                <?php endif; ?>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+

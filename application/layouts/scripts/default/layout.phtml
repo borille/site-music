@@ -9,9 +9,11 @@
         <?php echo $this->headScript() ?>        
     </head>
     <body <?php echo $this->body_params; ?>>
-        <div id="container">
-            <div id="header">
-                <?php echo $this->render( 'header.phtml' ); ?>
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div id="header">
+                    <?php echo $this->render( 'header.phtml' ); ?>
+                </div>
             </div>
 
             <div id="content">
@@ -22,7 +24,7 @@
                 ?>
             </div>
 
-            <div id = "footer">
+            <div id="footer">
                 <?php echo $this->render( 'footer.phtml' ); ?>
             </div>         
         </div>
